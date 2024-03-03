@@ -1,10 +1,10 @@
 "use client";
 
 import { LinkButton } from "@/components/button/button";
-import BlogSearch from "@/components/layouts/blog/list/blogSearch";
-import EnhancedTable from "@/components/layouts/blog/list/blogTable";
+import BlogSearch from "@/components/layouts/blog/list/search";
+import EnhancedTable from "@/components/layouts/blog/list/table";
 import { TopBar } from "@/components/layouts/menu/topbar";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 
 //各テキストエリアのマージンボトム
@@ -17,8 +17,16 @@ function BlogList() {
       <Typography variant="h6" sx={{ mb: marginBottom, textAlign: "center" }}>
         ブログ 一覧
       </Typography>
-      <BlogSearch />
-      <EnhancedTable />
+      <Box
+        sx={{
+          m: "auto",
+          maxWidth: 1400,
+          minWidth: 1300,
+        }}
+      >
+        <BlogSearch />
+        <EnhancedTable />
+      </Box>
       <LinkButton text="戻る" link="/login" />
     </>
   );
